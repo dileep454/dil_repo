@@ -1,0 +1,17 @@
+---
+ - hosts: xenial
+   become: yes
+   tasks:
+   - name: installation of tomcat7
+     apt:
+       name: tomcat7
+       state: present
+   - name: service restart
+     service:
+       name: tomcat7
+       state: restarted
+   - name: Deployment
+     copy:
+       src: /home/ansible/sample.war
+       dest: /var/lib/tomcat7/webapps 
+      

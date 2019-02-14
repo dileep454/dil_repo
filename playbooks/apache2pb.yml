@@ -1,0 +1,15 @@
+---
+ - hosts: xenial
+   tasks:
+    - name: install apache2
+      apt: 
+        name: apache2
+        state: present
+    - name: service restart
+      service:
+        name: apache2
+        state: restarted
+    - name: deployment
+      copy: 
+        src: /home/ansible/index.html
+        dest: /var/www/html

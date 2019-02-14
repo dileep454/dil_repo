@@ -1,0 +1,7 @@
+---
+ - hosts: xenial
+   tasks:
+     - name: uninstalling apache
+       apt:
+          name: apache2
+          state: absent 

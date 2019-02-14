@@ -1,0 +1,8 @@
+---
+ - hosts: xenial
+   tasks:
+     - name: Uninstalling tomcat from xenial
+       apt:
+          name: tomcat7
+          state: absent
+
